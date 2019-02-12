@@ -36,7 +36,7 @@ namespace LGSprint0UML
 
         public void FlyDown()
         {
-            CurrentAltitude -= 1000;
+            CurrentAltitude -= defaultFlyHeight;
             // force min altitude (0)
             CurrentAltitude = Math.Max(CurrentAltitude, 0);
         }
@@ -51,7 +51,7 @@ namespace LGSprint0UML
 
         public void FlyUp()
         {
-            CurrentAltitude += 1000;
+            CurrentAltitude += defaultFlyHeight;
             // Force max altitude
             CurrentAltitude = Math.Min(CurrentAltitude, MaxAltitude);
         }
@@ -88,7 +88,7 @@ namespace LGSprint0UML
             this.Engine.Stop();
         }
 
-        public string TakeOff()
+        public virtual string TakeOff()
         {
             string takeOffStr = "";
 
