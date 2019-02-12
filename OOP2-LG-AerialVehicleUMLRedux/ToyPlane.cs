@@ -1,5 +1,4 @@
-﻿// ToyPlane.cs
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -32,14 +31,27 @@ namespace LGSprint0UML
             return woundUpStr;
         }
 
-        public void StartEngine()
+        public override void StartEngine()
         {
-
+            if (isWoundUp) this.Engine.Start();
         }
 
-        new public string TakeOff()
+        public override string TakeOff()
         {
             string takeOffStr = "";
+
+            if (!this.Engine.IsStarted)
+            {
+                takeOffStr = "Could not take off - " + this + " engine not started";
+            }
+            else
+            {
+                CurrentAltitude = defaultFlyHeight;
+
+                IsFlying = true;
+
+                takeOffStr = this + " took off and is flying";
+            }
 
             return takeOffStr;
         }

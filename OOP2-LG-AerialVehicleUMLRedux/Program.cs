@@ -1,5 +1,4 @@
-﻿// Program.cs
-using System;
+﻿using System;
 
 namespace LGSprint0UML
 {
@@ -7,6 +6,7 @@ namespace LGSprint0UML
     {
         static void Main()
         {
+            #region Sprint 0 Testing
             ColorMagenta();
             Console.WriteLine("Luke Goldfain - Flying Vehicle Tester");
             Console.WriteLine("Airplane.cs");
@@ -66,6 +66,49 @@ namespace LGSprint0UML
 
             ap.FlyDown(ap.CurrentAltitude);
             Console.WriteLine(ap.About());
+            #endregion
+
+            #region Sprint 1 Testing (Airport)
+            ColorMagenta();
+            Console.WriteLine("---Airport Creation---");
+            Console.WriteLine("Creating a new Airport and populating its AerialVehicle list");
+            ColorWhite();
+
+            Airport airport = new Airport("JEF", 3); // Jeff Meyers Airport JEF ;)
+            Drone d = new Drone();
+            Helicopter h = new Helicopter();
+            Console.WriteLine(airport.Land(ap));
+            Console.WriteLine(airport.Land(d));
+            Console.WriteLine(airport.Land(h));
+
+            ColorMagenta();
+            Console.WriteLine("Attempting to add a fourth vehicle to the Airport (will fail as airport.MaxVehicles == 3)");
+            ColorWhite();
+
+            // Attempt to add a fourth vehicle (will fail)
+            ToyPlane tp = new ToyPlane();
+            Console.WriteLine(airport.Land(tp));
+
+            ColorMagenta();
+            Console.WriteLine("Calling Airport.TakeOff(AerialVehicle) to take off the helicopter, then the toy plane may land");
+            ColorWhite();
+
+            h.StartEngine();
+            Console.WriteLine(airport.TakeOff(h));
+            Console.WriteLine(airport.Land(tp));
+
+            ColorMagenta();
+            Console.WriteLine("Starting engines and calling Airport.AllTakeOff() to take off all of the vehicles");
+            ColorWhite();
+
+            ap.StartEngine();
+            d.StartEngine();
+            h.StartEngine();
+            tp.WindUp();
+            tp.StartEngine();
+            Console.WriteLine(airport.AllTakeOff());
+
+            #endregion
 
             Console.ReadKey();
         }

@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP2-LG-AerialVehicleUMLRedux", "OOP2-LG-AerialVehicleUMLRedux\OOP2-LG-AerialVehicleUMLRedux.csproj", "{6B5020A0-41FC-40A2-A339-D12BC2E2FC27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP2-LG-Sprint0UnitTest", "OOP2-LG-Sprint0UnitTest\OOP2-LG-Sprint0UnitTest.csproj", "{D66D8E3E-CC39-400A-879A-675775463A1A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{6B5020A0-41FC-40A2-A339-D12BC2E2FC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B5020A0-41FC-40A2-A339-D12BC2E2FC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B5020A0-41FC-40A2-A339-D12BC2E2FC27}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D66D8E3E-CC39-400A-879A-675775463A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D66D8E3E-CC39-400A-879A-675775463A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D66D8E3E-CC39-400A-879A-675775463A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D66D8E3E-CC39-400A-879A-675775463A1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

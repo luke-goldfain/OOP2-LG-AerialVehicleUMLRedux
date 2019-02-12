@@ -1,5 +1,4 @@
-﻿// AerialVehicle.cs
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -39,6 +38,8 @@ namespace LGSprint0UML
             CurrentAltitude -= 1000;
             // force min altitude (0)
             CurrentAltitude = Math.Max(CurrentAltitude, 0);
+
+            if (CurrentAltitude == 0) IsFlying = false;
         }
 
         public void FlyDown(int HowManyFeet)
@@ -47,6 +48,8 @@ namespace LGSprint0UML
             {
                 CurrentAltitude -= HowManyFeet;
             }
+
+            if (CurrentAltitude == 0) IsFlying = false;
         }
 
         public void FlyUp()
@@ -78,17 +81,17 @@ namespace LGSprint0UML
             return engineStartedStr;
         }
 
-        public void StartEngine()
+        virtual public void StartEngine()
         {
             this.Engine.Start();
         }
 
         public void StopEngine()
         {
-            this.Engine.Stop();
+            if (!IsFlying) this.Engine.Stop(); // Engine is only stoppable if the vehicle is not flying
         }
 
-        public string TakeOff()
+        virtual public string TakeOff()
         {
             string takeOffStr = "";
 
